@@ -6,6 +6,7 @@ class Slicice(models.Model):
     ime = models.CharField(max_length=64, null=False, unique=True)
     opis = models.TextField(default='', blank=True)
     slika = models.ImageField(upload_to='slicice')
+    url = models.CharField(max_length=30)
     kreirano = models.DateTimeField(auto_now_add=True)
     kreirao = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, related_name='slicice')
 
